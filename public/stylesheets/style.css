@@ -67,3 +67,60 @@ nav ul {
     margin-top: 6%;
     color: #373b41;
 }
+
+#seccioncontactenos {
+  display: grid;
+  grid-template-areas:  "area1 area1 area1  area1"
+                        "area2 area2 area3  area3"
+                        "area4 area4 area5  area5";
+}
+
+#uno {
+  background-color: chartreuse;
+  grid-area: area1;
+}
+
+#dos {
+  background-color: cadetblue;
+  grid-area: area2;
+}
+
+#tres {
+  background-color: coral;
+  grid-area: area3;
+}
+
+#cuatro {
+  background-color: darkgray;
+  grid-area: area4;
+}
+
+#cinco {
+  background-color: lightgreen;
+  grid-area: area5;
+}
+
+#seis {
+  background-color: cyan;
+  grid-area: area6;
+}
+
+.contectenos {
+  padding: 5%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.address {
+  justify-content: space-around;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
