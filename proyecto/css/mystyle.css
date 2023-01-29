@@ -1,0 +1,29 @@
+:root {
+    --main-nav-color: #0C6291 ;
+    --side-nav-color : #FBFEF9;
+  }
+
+.nav-color {
+    background-color: var(--main-nav-color) !important; 
+}
+
+.nav-side-color {
+    background-color: var(--side-nav-color) !important;
+}
+
+.my-logo {
+   color: var(--side-nav-color) !important; 
+   border-color: var(--side-nav-color);
+   font-family: 'Rubik', sans-serif;
+}
+
+.my-search-color {
+    border-color: var(--side-nav-color);
+    color: var(--side-nav-color);
+}
+
+.my-search-color:hover {
+    color: var(--main-nav-color) !important;
+    border-color: var(--side-nav-color);
+    background-color: var(--side-nav-color);
+}
