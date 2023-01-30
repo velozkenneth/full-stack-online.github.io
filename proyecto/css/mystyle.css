@@ -20,6 +20,7 @@
 .my-search-color {
     border-color: var(--side-nav-color);
     color: var(--side-nav-color);
+    background-color: var(--main-nav-color);
 }
 
 .my-search-color:hover {
