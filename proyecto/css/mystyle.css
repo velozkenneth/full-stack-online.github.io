@@ -1,6 +1,10 @@
 :root {
-    --main-nav-color: #0C6291 ;
-    --side-nav-color : #FBFEF9;
+    --main-nav-color: #49699E ;
+    --side-nav-color : #8AAFEB;
+    --error-color: #e7a495;
+    --ok-color: #83ddc9;
+    --letter-color: #5D4DEB;
+    --network-color: #92dafc;
   }
 
 .nav-color {
@@ -12,9 +16,10 @@
 }
 
 .my-logo {
-   color: var(--side-nav-color) !important; 
+   color: #f5f5f5 !important; 
    border-color: var(--side-nav-color);
-   font-family: 'Rubik', sans-serif;
+   font-family: 'Signika', sans-serif;
+   text-transform: uppercase;
 }
 
 .my-search-color {
@@ -27,4 +32,49 @@
     color: var(--main-nav-color) !important;
     border-color: var(--side-nav-color);
     background-color: var(--side-nav-color);
+}
+
+.font-heading-menu {
+    font-family: 'Rubik', sans-serif !important;
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.font-data-menu {
+    font-family: 'Rubik', sans-serif !important;
+    color: #f5f5f5;
+    font-weight: 300;
+}
+
+.font-data-menu:hover {
+    color: var(--main-nav-color);
+}
+
+.target-color-ok {
+    background-color: var(--ok-color);
+}
+
+.target-color-error {
+    background-color: var(--error-color);
+}
+
+.network-color {
+    background-color: var(--network-color);
+}
+
+.footer {
+    color:#f5f5f5 ;
+}
+
+.text-card {
+    color: #000000;
+    text-decoration: none;
+}
+
+.text-card:hover {
+    color: #f5f5f5;
+}
+
+main {
+    background-color: #f5f5f5;
 }

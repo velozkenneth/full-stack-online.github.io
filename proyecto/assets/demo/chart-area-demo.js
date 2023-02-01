@@ -7,20 +7,20 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: ["Jan 1", "Jan 2", "Jan 3", "Jan 4", "Jan 5", "Jan 6", "Jan 7", "Jan 8", "Jan 9", "Jan 10", "Jan 11", "Jan 12", "Jan 13"],
     datasets: [{
-      label: "Sessions",
+      label: "Equipos respaldados",
       lineTension: 0.3,
-      backgroundColor: "rgba(2,117,216,0.2)",
-      borderColor: "rgba(2,117,216,1)",
+      backgroundColor: "rgba(116,193,211,255)",
+      borderColor: "rgba(242,162,45,255)",
       pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBackgroundColor: "rgba(96,180,104,255)",
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: [195, 211, 180, 190, 195, 185, 198, 195, 194, 193, 195, 198, 196],
     }],
   },
   options: {
@@ -39,7 +39,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 40000,
+          max: 220,
           maxTicksLimit: 5
         },
         gridLines: {
