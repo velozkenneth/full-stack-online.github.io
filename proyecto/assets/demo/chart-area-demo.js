@@ -11,10 +11,10 @@ var myLineChart = new Chart(ctx, {
     datasets: [{
       label: "Equipos respaldados",
       lineTension: 0.3,
-      backgroundColor: "rgba(116,193,211,255)",
-      borderColor: "rgba(242,162,45,255)",
+      backgroundColor: "rgb(128, 212, 246)",
+      borderColor: "rgb(6, 131, 181)",
       pointRadius: 5,
-      pointBackgroundColor: "rgba(96,180,104,255)",
+      pointBackgroundColor: "rgb(181, 234, 255)",
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
