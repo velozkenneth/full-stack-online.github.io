@@ -57,6 +57,13 @@ let loadWeekForecastData = () => {
 	
 }
 
+let chargeCity = () => {
+  let element = document.getElementsByName("select")[0]
+  for (let data of weather_data){
+    element.innerHTML += `<option class="dropdown-item" value="${data.city.toLowerCase()}">${data.city}</option>`
+  }
+}
+
 let eventManage  = () => {
   document.addEventListener("DOMContentLoaded", (event) => {
     //Código a ejecutar
@@ -70,5 +77,5 @@ let eventManage  = () => {
       loadWeekForecastData();
   });
 }
-
+chargeCity()
 eventManage()
