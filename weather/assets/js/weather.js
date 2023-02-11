@@ -57,6 +57,18 @@ let loadWeekForecastData = () => {
 	
 }
 
+let eventManage  = () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    //Código a ejecutar
+    loadDayForecastData();
+  });
+  
+  let element = document.getElementById("loadinfo");
+  
+  element.addEventListener('click', (event) => {
+      //Código a ejecutar
+      loadWeekForecastData();
+  });
+}
 
-loadDayForecastData();
-loadWeekForecastData();
+eventManage()
