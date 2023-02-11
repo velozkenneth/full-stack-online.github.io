@@ -58,7 +58,7 @@ let loadWeekForecastData = () => {
 }
 
 let eventManage  = () => {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", (event) => {
     //Código a ejecutar
     loadDayForecastData();
   });
