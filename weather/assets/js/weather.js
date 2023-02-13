@@ -1,8 +1,11 @@
 import { weather_data } from './data.js';
 
+let data_city = {}
+for (let city of weather_data){
+    data_city[city.city.toLowerCase()] = city
+}
 
-let loadDayForecastData = () => {
-	let data = weather_data[0]
+let loadDayForecastData = (data) => {
         let data_city = data.city
         let data_date = data.date
         let data_maxtemperature = data.maxtemperature
@@ -38,8 +41,7 @@ let loadDayForecastData = () => {
         }
 }
 
-let loadWeekForecastData = () => {
-	let data = weather_data[0]
+let loadWeekForecastData = (data) => {
     for (let forecast of data.forecast_week){
         let {day, text, date, temperature, icon} = forecast 
         document.getElementsByClassName("list-group")[0].innerHTML += `
@@ -60,22 +62,34 @@ let loadWeekForecastData = () => {
 let chargeCity = () => {
   let element = document.getElementsByName("select")[0]
   for (let data of weather_data){
-    element.innerHTML += `<option class="dropdown-item" value="${data.city.toLowerCase()}">${data.city}</option>`
+    element.innerHTML += `<option class="dropdown-item" id="${data.city.toLowerCase()}">${data.city}</option>`
+    eventManage(data.city)
   }
 }
-
-let eventManage  = () => {
+/* */
+let eventManage  = (city) => {
   document.addEventListener("DOMContentLoaded", (event) => {
     //Código a ejecutar
-    loadDayForecastData();
+    loadDayForecastData(city);
   });
   
   let element = document.getElementById("loadinfo");
   
   element.addEventListener('click', (event) => {
       //Código a ejecutar
-      loadWeekForecastData();
+      loadWeekForecastData(city);
   });
+
 }
+/*
+let eventCity = () => {
+
+  for (let city in data_city){
+    let element = document.getElementById(city);
+    element.addEventListener('click', (event) => {
+        //Código a ejecutar
+        loadWeekForecastData();
+}}*/
+
 chargeCity()
 eventManage()
