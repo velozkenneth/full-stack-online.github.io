@@ -41,6 +41,7 @@ let loadDayForecastData = (data) => {
         }
 }
 
+
 let loadWeekForecastData = (data) => {
     for (let forecast of data.forecast_week){
         let {day, text, date, temperature, icon} = forecast 
@@ -61,26 +62,21 @@ let loadWeekForecastData = (data) => {
 
 let chargeCity = () => {
   let element = document.getElementsByName("select")[0]
-  for (let data of weather_data){
-    element.innerHTML += `<option class="dropdown-item" id="${data.city.toLowerCase()}">${data.city}</option>`
-    eventManage(data.city)
+  for (let data in data_city){
+    element.innerHTML += `<option class="dropdown-item" id="${data.toLowerCase()}">${data_city[data]["city"]}</option>`
   }
 }
-/* */
-let eventManage  = (city) => {
+/* let eventManage  = (city) => {
   document.addEventListener("DOMContentLoaded", (event) => {
     //Código a ejecutar
     loadDayForecastData(city);
   });
   
-  let element = document.getElementById("loadinfo");
   
-  element.addEventListener('click', (event) => {
-      //Código a ejecutar
-      loadWeekForecastData(city);
   });
 
-}
+}*/
+
 /*
 let eventCity = () => {
 
@@ -91,5 +87,17 @@ let eventCity = () => {
         loadWeekForecastData();
 }}*/
 
+//loadDayForecastData(data_city["guayaquil"])
+
+let eventCity = (data) => {
+  document.addEventListener("DOMContentLoaded", (event) => {
+    loadDayForecastData(data);
+  })
+  let element = document.getElementById("loadinfo");
+  
+  element.addEventListener('click', (event) => {
+      //Código a ejecutar
+      loadWeekForecastData(data);})
+}
 chargeCity()
-eventManage()
+eventCity(data_city["guayaquil"])
