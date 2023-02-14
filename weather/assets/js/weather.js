@@ -2,11 +2,11 @@ import { weather_data } from './data.js';
 
 let data_city = {}
 for (let city of weather_data){
-    data_city[city.city.toLowerCase()] = city
+    data_city[city.city] = city
 }
 
 let loadDayForecastData = (data) => {
-        let data_city = data.city
+        let data_name = data.city
         let data_date = data.date
         let data_maxtemperature = data.maxtemperature
         let data_mintemperature = data.mintemperature
@@ -14,7 +14,7 @@ let loadDayForecastData = (data) => {
         let data_wind = data.wind
         let data_rainfall = data.rainfall
         
-        document.getElementById("city").innerHTML = data_city
+        document.getElementById("city").innerHTML = data_name
         document.getElementById("date").innerHTML = data_date
         document.getElementById("maxtemperature").innerHTML = data_maxtemperature
         document.getElementById("mintemperature").innerHTML = data_mintemperature
@@ -43,6 +43,7 @@ let loadDayForecastData = (data) => {
 
 
 let loadWeekForecastData = (data) => {
+  document.getElementsByClassName("list-group")[0].innerHTML = ""
     for (let forecast of data.forecast_week){
         let {day, text, date, temperature, icon} = forecast 
         document.getElementsByClassName("list-group")[0].innerHTML += `
@@ -63,41 +64,30 @@ let loadWeekForecastData = (data) => {
 let chargeCity = () => {
   let element = document.getElementsByName("select")[0]
   for (let data in data_city){
-    element.innerHTML += `<option class="dropdown-item" id="${data.toLowerCase()}">${data_city[data]["city"]}</option>`
+    element.innerHTML += `<option class="dropdown-item" value="${data}">${data_city[data]["city"]}</option>`
   }
 }
-/* let eventManage  = (city) => {
-  document.addEventListener("DOMContentLoaded", (event) => {
-    //Código a ejecutar
-    loadDayForecastData(city);
-  });
-  
-  
-  });
-
-}*/
-
-/*
-let eventCity = () => {
-
-  for (let city in data_city){
-    let element = document.getElementById(city);
-    element.addEventListener('click', (event) => {
-        //Código a ejecutar
-        loadWeekForecastData();
-}}*/
-
-//loadDayForecastData(data_city["guayaquil"])
 
 let eventCity = (data) => {
-  document.addEventListener("DOMContentLoaded", (event) => {
-    loadDayForecastData(data);
-  })
   let element = document.getElementById("loadinfo");
   
   element.addEventListener('click', (event) => {
       //Código a ejecutar
       loadWeekForecastData(data);})
 }
+
+let cities = (data_city) => {
+  let cities = document.querySelector(".select_city");
+  cities.addEventListener('change', (event) => {
+      eventCity(data_city[event.target.value]);
+      loadDayForecastData(data_city[event.target.value])
+    console.log(event.target.value)
+    })
+  }
+
+loadDayForecastData(data_city["Guayaquil"])
 chargeCity()
-eventCity(data_city["guayaquil"])
+document.addEventListener("DOMContentLoaded", (event) => {
+  cities(data_city);
+})
+
